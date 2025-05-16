@@ -26,15 +26,15 @@ function Signup({ setShowLogin }) {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow">
-            <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+        <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow flex flex-col items-center">
+            <h2 className="text-3xl font-bold mb-4">Sign Up</h2>
             <form onSubmit={handleSignup}>
                 <input
                     type="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border border-gray-300 rounded bg-gray-50 focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all duration-200"
                     required
                 />
                 <input
@@ -42,7 +42,7 @@ function Signup({ setShowLogin }) {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Password"
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border border-gray-300 rounded bg-gray-50 focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all duration-200"
                     required
                 />
                 <input
@@ -50,7 +50,7 @@ function Signup({ setShowLogin }) {
                     value={confirm}
                     onChange={e => setConfirm(e.target.value)}
                     placeholder="Confirm Password"
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border border-gray-300 rounded bg-gray-50 focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all duration-200"
                     required
                 />
                 <button type="submit" className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">

@@ -21,7 +21,7 @@ function BlogList({ blogs, setView, fetchBlogs, setEditBlog, setShowBlog }) {
     };
 
     return (
-        <div className="max-w-5xl mx-auto mt-10 p-8 bg-gradient-to-br from-white via-blue-50 to-blue-100 rounded-2xl shadow-2xl border border-blue-200">
+        <div className="min-w-[70vw] max-w-[80vw] mx-auto mt-10 p-8 bg-gradient-to-br from-white via-blue-[#eff6ee] to-blue-50 rounded-2xl shadow-2xl border border-blue-200">
             <div className="flex justify-between items-center mb-8">
                 <h2 className="text-4xl font-extrabold text-blue-700 drop-shadow">📝 Your Blogs</h2>
                 <button
