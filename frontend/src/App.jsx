@@ -41,8 +41,13 @@ function App() {
     };
 
     const handleLogout = async () => {
-        await logout();
-        setLoggedIn(false);
+        if(!window.confirm('Are you sure you want to logout?')) return;
+        try {
+            await logout();
+            setLoggedIn(false);
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
     };
 
     return (
