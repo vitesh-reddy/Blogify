@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import ShowBlog from './components/ShowBlog';
 import { getBlogs, logout } from './services/api';
+import axios from 'axios';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -13,10 +14,19 @@ function App() {
     const [editBlog, setEditBlog] = useState(null);
     const [showLogin, setShowLogin] = useState(true);
     const [showBlog, setShowBlog] = useState(null);
+    const customStyle = " flex flex-col justify-center";
+    const appStyle = "min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-100" + (!loggedIn || showBlog != null ? customStyle : "");
 
     useEffect(() => {
         if (loggedIn) fetchBlogs();
     }, [loggedIn]);
+
+    useEffect(() => {
+    // Check if user is authenticated on mount
+    axios.get('http://localhost:5000/api/auth/me', { withCredentials: true })
+        .then(() => setLoggedIn(true))
+        .catch(() => setLoggedIn(false));
+}, []);
 
     const fetchBlogs = async () => {
         try {
@@ -36,7 +46,7 @@ function App() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200">
+        <div className={appStyle}>
             {!loggedIn ? (
                 showLogin ? (
                     <Login setLoggedIn={setLoggedIn} setShowLogin={setShowLogin} />
