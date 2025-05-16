@@ -76,6 +76,7 @@ src/
     - `publishBlog(blogData)`
     - `getBlogs()`
     - `getBlog(id)`
+    - `deleteBlog(id)`
 
 ---
 
@@ -103,7 +104,7 @@ src/
    - On success, user is authenticated and can access blog features.
 
 3. **Blog Management:**  
-   - User can create, auto-save, publish, edit, and view blogs.
+   - User can create, auto-save, publish, edit, view, and delete blogs.
    - Blogs are fetched and displayed in lists (drafts/published).
 
 4. **Logout:**  

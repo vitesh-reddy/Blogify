@@ -39,6 +39,11 @@ This document describes the API endpoints, services, and models used in the Blog
 - **Headers:** Requires valid JWT cookie.
 - **Response:** `{ user }` or error.
 
+### DELETE `/:id`
+- **Description:** Delete a blog by ID.
+- **Headers:** Requires authentication.
+- **Response:** Success message or error.
+
 ### POST `/logout`
 - **Description:** Log out the user (clears JWT cookie).
 - **Response:** Success message.

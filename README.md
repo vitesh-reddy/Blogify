@@ -1,6 +1,6 @@
 # Blogify
 
-Blogify is a full-stack blog editor built with the MERN stack and styled with Tailwind CSS. You can write, save, and publish blog posts with a smooth Auto-save after 5 seconds of inactivity using `Debouncing` and draft system—just like a modern blogging platform.
+Blogify is a full-stack blog editor built with the MERN stack and styled with Tailwind CSS. You can write, save, publish, **delete**, and manage blog posts with a smooth auto-save `(using debouncing)` and draft system.
 
 ---
 
@@ -17,7 +17,7 @@ Blogify is a full-stack blog editor built with the MERN stack and styled with Ta
 - **Rich Blog Editor:** Write posts with a title, rich content, and tags.
 - **Drafts & Publishing:** Save your work as a draft or publish it when ready.
 - **Auto-Save & Debouncing:** Your draft is auto-saved every 30 seconds, and also after 5 seconds of inactivity (using debouncing methods).
-- **Blog Management:** View all your blogs, with drafts and published posts shown separately. Edit any post at any time.
+- **Blog Management:** View, edit, **delete**, and manage all your blogs (drafts and published).
 - **Notifications:** Get instant feedback when your work is auto-saved or published.
 - **Authentication:** Secure login with JWT.
 - **Modern UI:** Clean, responsive, and attractive design using Tailwind CSS.
@@ -67,6 +67,7 @@ The `.env` files for both backend and frontend are included in the repository, s
 3. **Auto-Save:** Your draft will auto-save as you write, and you'll see notifications when this happens.
 4. **Publish:** When you’re ready, hit "Publish" to make your post public.
 5. **Edit:** View all your drafts and published blogs. Click "Edit" to update any post.
+6. **Delete:** Remove any blog post you no longer want.
 
 ---
 
@@ -89,7 +90,6 @@ frontend/
     styles/
   tailwind.config.js
   postcss.config.js
-  .env
   DOC.md
 ```
 
