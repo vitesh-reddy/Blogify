@@ -17,15 +17,15 @@ function Login({ setLoggedIn, setShowLogin }) {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow">
-            <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <div className="max-w-md mx-auto px-auto p-6 bg-white rounded-lg shadow flex flex-col items-center">
+            <h2 className="text-3xl font-bold mb-4 ">Login</h2>
             <form onSubmit={handleLogin}>
                 <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border border-gray-300 rounded bg-gray-50 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
                     required
                 />
                 <input
@@ -33,7 +33,7 @@ function Login({ setLoggedIn, setShowLogin }) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
-                    className="w-full p-2 mb-4 border rounded"
+                    className="w-full p-2 mb-4 border border-gray-300 rounded bg-gray-50 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
                     required
                 />
                 <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
