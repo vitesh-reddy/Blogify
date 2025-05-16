@@ -69,7 +69,7 @@ function BlogEditor({ token, setView, fetchBlogs, editBlog }) {
     };
 
     return (
-        <div className="max-w-3xl mx-auto mt-10 p-8 bg-gradient-to-br from-white via-blue-50 to-blue-100 rounded-2xl shadow-2xl border border-blue-200">
+        <div className="min-w-[60vw] max-w-[70vw] mx-auto mt-10 p-8 bg-gradient-to-br from-white via-blue-[#eff6ee] to-blue-50 rounded-2xl shadow-2xl border border-blue-200">
             <h2 className="text-4xl font-extrabold mb-6 text-blue-700 drop-shadow">✍️ Write Your Blog</h2>
             <input
                 type="text"
