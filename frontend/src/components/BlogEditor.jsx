@@ -7,7 +7,7 @@ import useDebounce from '../hooks/useDebounce';
 
 function BlogEditor({ token, setView, fetchBlogs, editBlog }) {
     const [currentBlog, setCurrentBlog] = useState(editBlog || { id: '', title: '', content: '', tags: '', status: 'draft' });
-    const [notification, setNotification] = useState('');
+    const [notification, setNotification] = useState({message: '', sign: '' });
     const [autoSaveTimer, setAutoSaveTimer] = useState(null);
 
     // Auto-save every 30 seconds
@@ -38,33 +38,33 @@ function BlogEditor({ token, setView, fetchBlogs, editBlog }) {
         if (!blogData.title && !blogData.content) return;
         try {
             const response = await saveDraft(blogData, token);
-            setNotification('Draft auto-saved!');
+            setNotification({message: 'Draft auto-saved!', sign: '+' });
             setCurrentBlog(response);
             fetchBlogs();
-        } catch (error) {
-            setNotification('Auto-save failed!');
+        } catch (err) {
+            setNotification({ message: 'Auto-save failed! ' + err.message, sign: '-' });
         }
     };
 
     const handleSaveDraft = async () => {
         try {
             const response = await saveDraft(currentBlog, token);
-            setNotification('Draft saved!');
+            setNotification({message: 'Draft saved!', sign: '+' });
             setCurrentBlog(response);
             fetchBlogs();
-        } catch (error) {
-            setNotification('Error saving draft!');
+        } catch (err) {
+            setNotification({ message: 'Error saving draft! ' + err.message, sign: '-' });
         }
     };
 
     const handlePublish = async () => {
         try {
             await publishBlog({ ...currentBlog, status: 'published' }, token);
-            setNotification('Blog published!');
+            setNotification({message: 'Blog published!', sign: '+' });
             setCurrentBlog({ id: '', title: '', content: '', tags: '', status: 'draft' });
             fetchBlogs();
         } catch (error) {
-            setNotification('Error publishing blog!');
+            setNotification({ message: 'Error publishing blog!' + error.message, sign: '-' });
         }
     };
 
@@ -112,7 +112,7 @@ function BlogEditor({ token, setView, fetchBlogs, editBlog }) {
                     View Blogs
                 </button>
             </div>
-            <Notification message={notification} setMessage={setNotification} />
+            <Notification notification={notification} setNotification={setNotification} />
         </div>
     );
 }
