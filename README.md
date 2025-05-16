@@ -31,7 +31,7 @@ Follow these steps to run the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Blogify.git
+git clone https://github.com/vitesh-reddy/Blogify.git
 cd Blogify
 ```
 
