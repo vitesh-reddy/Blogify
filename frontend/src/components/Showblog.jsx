@@ -8,7 +8,7 @@ function ShowBlog({ blog, onBack }) {
             >
                 ← Back
             </button>
-            <h1 className="text-4xl font-extrabold mb-4 text-blue-800 drop-shadow">{blog.title}</h1>
+            <h1 className="text-4xl font-extrabold mb-4 text-blue-700 drop-shadow">{blog.title}</h1>
             <div className="mb-4 flex flex-wrap gap-2">
                 {blog.tags && blog.tags.split(',').map(tag => (
                     <span key={tag} className="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
