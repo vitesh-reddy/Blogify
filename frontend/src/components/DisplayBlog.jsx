@@ -1,4 +1,4 @@
-function ShowBlog({ blog, onBack }) {
+function DisplayBlog({ blog, onBack }) {
     if (!blog) return null;
     return (
         <div className="min-w-[60vw] max-w-[70vw] mx-auto p-8 bg-gradient-to-br from-white via-blue-[#eff6ee] to-blue-50 rounded-2xl shadow-2xl border border-blue-200">
@@ -24,4 +24,4 @@ function ShowBlog({ blog, onBack }) {
     );
 }
 
-export default ShowBlog;
+export default DisplayBlog;

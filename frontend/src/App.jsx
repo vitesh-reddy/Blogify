@@ -3,7 +3,7 @@ import BlogEditor from './components/BlogEditor';
 import BlogList from './components/BlogList';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import ShowBlog from './components/ShowBlog';
+import DisplayBlog from './components/DisplayBlog';
 import { getBlogs, logout } from './services/api';
 import axios from 'axios';
 
@@ -59,7 +59,7 @@ function App() {
                     <Signup setShowLogin={setShowLogin} />
                 )
             ) : showBlog ? (
-                <ShowBlog blog={showBlog} onBack={() => setShowBlog(null)} />
+                <DisplayBlog blog={showBlog} onBack={() => setShowBlog(null)} />
             ) : (
                 <>
                     <div className="flex justify-end p-4">
