@@ -7,14 +7,18 @@ const blogRoutes = require('./routes/blogs');
 
 const app = express();
 
-// Connect to MongoDB
 connectDB();
 
-app.use(cors({ origin: 'https://blogify-cvjz.onrender.com', credentials: true }));
+app.use(cors({
+  origin: (origin, callback) => {
+    callback(null, true);
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
-// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/blogs', blogRoutes);
 
