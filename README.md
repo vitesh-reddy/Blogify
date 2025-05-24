@@ -40,6 +40,18 @@ cd Blogify
 ```bash
 cd backend
 npm install
+```
+
+**Create a `.env` file in the `backend/` directory with the following content:**
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRATION=1hr
+PORT=5000
+```
+
+Start the backend server:
+```bash
 npm run dev
 ```
 
@@ -50,13 +62,17 @@ Open a new terminal window, then:
 ```bash
 cd frontend
 npm install
-npm run dev
 ```
 
----
+**Create a `.env` file in the `frontend/` directory with the following content:**
+```env
+VITE_BACKEND_URL=http://localhost:5000/api
+```
 
-**Note:**  
-The `.env` files for both backend and frontend are included in the repository, so you don't need to create them manually.
+Start the frontend development server:
+```bash
+npm run dev
+```
 
 ---
 
@@ -90,6 +106,7 @@ frontend/
     styles/
   tailwind.config.js
   postcss.config.js
+  .env
   DOC.md
 ```
 
