@@ -1,11 +1,16 @@
 import axios from 'axios';
 
 const API_URL = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}/api`;
-
 const axiosInstance = axios.create({
     baseURL: API_URL,
     withCredentials: true
 });
+
+export const authCheckOnMount = async () => {
+    return await axiosInstance.get('/auth/me')
+    .then(true)
+    .catch(false);
+}
 
 export const login = async (credentials) => {
     const response = await axiosInstance.post('/auth/login', credentials);

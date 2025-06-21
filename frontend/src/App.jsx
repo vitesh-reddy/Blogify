@@ -4,8 +4,7 @@ import BlogList from './components/BlogList';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import DisplayBlog from './components/DisplayBlog';
-import { getBlogs, logout } from './services/api';
-import axios from 'axios';
+import { authCheckOnMount, getBlogs, logout } from './services/api';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -23,9 +22,7 @@ function App() {
 
     useEffect(() => {
     // Check if user is authenticated on mount
-    axios.get('http://localhost:5000/api/auth/me', { withCredentials: true })
-        .then(() => setLoggedIn(true))
-        .catch(() => setLoggedIn(false));
+    setLoggedIn(authCheckOnMount());
 }, []);
 
     const fetchBlogs = async () => {
