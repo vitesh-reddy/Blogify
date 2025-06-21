@@ -2,9 +2,11 @@
     "author": "Vitesh Reddy",
     "name": "blogify-backend",
     "version": "1.0.0",
+    "type": "module",
     "scripts": {
-        "start": "node server.js",
-        "dev": "nodemon server.js"
+        "start": "node backend/server.js",
+        "dev": "nodemon server.js",
+        "build": "npm i && npm i --prefix frontend && npm run build --prefix frontend"
     },
     "dependencies": {
         "bcrypt": "^6.0.0",
